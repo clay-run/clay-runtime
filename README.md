@@ -8,7 +8,7 @@ Currently supports:
 ## Install
 
 ```
-$ npm install clay-runtime --save
+$ npm install https://github.com/clay-run/clay-runtime.git --save
 ```
 
 Then use the starter code:
@@ -36,9 +36,9 @@ exports.handler = function() {
     were sent to the service
     */
 
-    clay.status(200)
-        .header('Header', 'value')
-        .end(clay.params);
+    clay.status(200) // Set the status of the endpoint
+        .header('Header', 'value') // Set custom headers
+        .end(clay.params); // Send JSON back
 }
 ```
 
