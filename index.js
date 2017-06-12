@@ -2,7 +2,8 @@
  * Clay runtime for cloud functions.
  */
 
-var awsFile = require('./src/awsFile.js');
+var awsFile = require('./src/awsFile.js'),
+    path = require('path');
 
 function startFunction() {
     clayRuntime.event = startFunction.caller.arguments[0]
@@ -77,6 +78,14 @@ var clayRuntime = {
      */
     baseDir: function() {
         return '/tmp/';
+    },
+
+    /**
+     * Path
+     * Get the absolute path for a file
+     */
+    path: function(fileRelativePath) {
+        return path.resolve(clayRuntime.baseDir(), fileRelativePath)
     }
 }
 
