@@ -32,7 +32,7 @@ module.exports = function(filePath) {
         var encoding = encoding || 'utf8';
 
         return new Promise(function(resolve, reject) {
-            fs.writeFile(awsPath, encoding, function(err) {
+            fs.writeFile(awsPath, data, encoding, function(err) {
                 if(err) {
                     return reject(err);
                 }
