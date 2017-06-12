@@ -23,8 +23,8 @@ exports.handler = function() {
 
     /*
     Your service only responds to POST requests
-    any variables passed are found in event.body
-    eventVars is a convenience that parses any JSON
+    any variables passed are found in clay.params
+    clay.parms is a convenience that parses any JSON
     objects that were passed in the POST request
     */
 
