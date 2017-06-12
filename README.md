@@ -34,11 +34,14 @@ exports.handler = function() {
     var hello = clay.file('world.txt');
 
     hello.write('this is awesome')
-    var content = hello.read()
-    // content == 'this is awesome'
-
-    // Destroy the file
-    hello.unlink()
+         .then(hello.read)
+         .then(function(content) {
+            // content == 'this is awesome'
+            return hello.unlink();
+         })
+         .then(function() {
+             // File destroyed
+         })
 
     /*
     JSON Stringify the result of the service call
