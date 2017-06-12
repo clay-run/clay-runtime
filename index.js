@@ -3,12 +3,12 @@
  */
 
 function startFunction() {
-    this.event = startFunction.caller.arguments[0]
-    this.context = startFunction.caller.arguments[1]
-    this.callback = startFunction.caller.arguments[2]
+    clayRuntime.event = startFunction.caller.arguments[0]
+    clayRuntime.context = startFunction.caller.arguments[1]
+    clayRuntime.callback = startFunction.caller.arguments[2]
 
     try { 
-        this.params = JSON.parse(this.event.body);
+        clayRuntime.params = JSON.parse(this.event.body);
     } catch(e) {
         // Not json input
         console.log(e);
