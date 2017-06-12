@@ -15,7 +15,7 @@ Then use the starter code:
 
 ```js
 // Require your files or libraries here. You can use npm to install libraries.
-var clay = require('./clay.js');
+var clay = require('clay-runtime');
 
 exports.handler = function() {
     // Has to be the first line of the function
