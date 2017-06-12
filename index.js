@@ -75,4 +75,4 @@ var clayRuntime = {
     }
 }
 
-module.exports = clay;
+module.exports = clayRuntime;
