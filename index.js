@@ -8,7 +8,7 @@ function startFunction() {
     clayRuntime.callback = startFunction.caller.arguments[2]
 
     try { 
-        clayRuntime.params = JSON.parse(this.event.body);
+        clayRuntime.params = JSON.parse(clayRuntime.event.body);
     } catch(e) {
         // Not json input
         console.log(e);
