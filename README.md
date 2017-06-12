@@ -41,17 +41,16 @@ exports.handler = function() {
          })
          .then(function() {
              // File destroyed
+            /*
+            JSON Stringify the result of the service call
+            In this example we simply pass back whatever parameters
+            were sent to the service
+            */
+
+            clay.status(200) // Set the status of the endpoint
+                .header('Header', 'value') // Set custom headers
+                .end(clay.params); // Send JSON or any data back
          })
-
-    /*
-    JSON Stringify the result of the service call
-    In this example we simply pass back whatever parameters
-    were sent to the service
-    */
-
-    clay.status(200) // Set the status of the endpoint
-        .header('Header', 'value') // Set custom headers
-        .end(clay.params); // Send JSON or any data back
 }
 ```
 
