@@ -30,6 +30,16 @@ exports.handler = function() {
 
     var key1 = clay.params.key1;
 
+    // Write to a file
+    var hello = clay.file('world.txt');
+
+    hello.write('this is awesome')
+    var content = hello.read()
+    // content == 'this is awesome'
+
+    // Destroy the file
+    hello.unlink()
+
     /*
     JSON Stringify the result of the service call
     In this example we simply pass back whatever parameters

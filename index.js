@@ -2,6 +2,8 @@
  * Clay runtime for cloud functions.
  */
 
+var awsFile = require('./src/awsFile.js');
+
 function startFunction() {
     clayRuntime.event = startFunction.caller.arguments[0]
     clayRuntime.context = startFunction.caller.arguments[1]
@@ -30,6 +32,9 @@ var clayRuntime = {
     },
 
     start: startFunction.bind(this),
+    file: function(path) {
+        return new awsFile(path);
+    },  
 
     /**
      * Set the status of the lambda
