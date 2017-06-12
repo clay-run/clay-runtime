@@ -60,7 +60,7 @@ var clayRuntime = {
         }
 
         return this.context.succeed({
-            'body': JSON.stringify(result),
+            'body': (typeof result == "object" ? JSON.stringify(result) : result),
             'statusCode': this.statusCode,
             'headers': this.headers
         })
